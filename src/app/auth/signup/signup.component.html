@@ -1,0 +1,50 @@
+<h3>create account</h3>
+<form #ngForm="ngForm" (ngSubmit)="onSubmit()" class="ui form" [formGroup]="authForm">
+    <div class="field">
+        <label>Username</label>
+        <input formControlName="username" type="text" autocomplete="Username" placeholder="Username">
+        {{ authForm.get('username')?.errors | json }} 
+            <div class="ui pointing red basic label" *ngIf="checkRequiredUsername()">value is required</div>
+            <div class="ui pointing red basic label" *ngIf="checkMinLength()">characters must be at least
+                {{authForm.controls['username'].errors!['minlength'].requiredLength}}
+                characters</div>
+            <div class="ui pointing red basic label" *ngIf="checkPattern()">This symbol is not allowed</div>
+            <div class="ui pointing red basic label" *ngIf="checkTakenUsername()">This username is taken</div>
+    </div>
+    
+    <div class="field">
+        <label>Password</label>
+        <input formControlName="password" type="password" autocomplete="new-password" placeholder="New password">
+        <div class="ui pointing red basic label" *ngIf="checkRequiredPassword()">password is required</div>
+        <div class="ui pointing red basic label" *ngIf="checkMinLengthPassword()">characters must be at least
+            {{authForm.controls['password'].errors!['minlength'].requiredLength}}
+            characters</div>
+        {{ authForm.get('password')?.errors | json }} 
+    </div>
+
+    <div class="field">
+        <label>confirm-password</label>
+        <input formControlName="passwordConfirmation" type="password" autocomplete="confirm-password" placeholder="Confirm password">
+        {{ authForm.get('passwordConfirmation')?.errors | json }}
+        <div class="ui pointing red basic label" *ngIf="checkRequiredPasswordConfirmation()">password confirmation is required
+        </div>
+        <div class="ui pointing red basic label" *ngIf="checkMinLengthPasswordConfirmation()">characters must be at least
+            {{authForm.controls['passwordConfirmation'].errors!['minlength'].requiredLength}}
+            characters
+        </div>
+        <div class="ui pointing red basic label" *ngIf="checkMaxLengthPasswordConfirmation()">characters must be max
+            {{authForm.controls['passwordConfirmation'].errors!['maxlength'].requiredLength}}
+            characters
+        </div>
+        <div class="ui left red basic label" *ngIf="checkPasswordDontMatch()">
+            Passwords does not match
+        </div>
+    </div>
+     <hr/>
+        <div class="button">
+            <button type="submit" class="ui primary button">Submit</button>
+        </div>
+        <div class="ui pointing red basic label" *ngIf="checkConnection()">
+            No internet connection detected,failed to sign up
+        </div>
+</form>

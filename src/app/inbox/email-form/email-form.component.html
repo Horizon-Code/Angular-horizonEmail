@@ -1,0 +1,36 @@
+<form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="emailForm">
+    
+    <app-input 
+    [control]="formPropertyGetters('to')" 
+    inputType="email" 
+    label="To"
+    >
+    </app-input>
+    
+    <app-input 
+    disabled 
+    [control]="formPropertyGetters('from')" 
+    inputType="email" label="From"
+    >
+    </app-input>
+   
+    <app-input 
+    [control]="formPropertyGetters('subject')" 
+    inputType="text" 
+    label="Subject"
+    >
+    </app-input>
+    
+    <app-input 
+    controlType="textarea" 
+    [control]="formPropertyGetters('text')" 
+    inputType="email" 
+    label="Content"
+    >
+    </app-input>
+    
+    <div class="ui divider"></div>
+    
+    <button class="ui button primary">Send</button>
+
+</form>

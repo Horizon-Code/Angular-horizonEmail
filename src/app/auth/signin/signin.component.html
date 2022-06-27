@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmitSignin()" class="ui form" [formGroup]="authForm">
+<div class="ui stacked segment">
+    <h2>Log in</h2>
+    <div class="field">
+        <input formControlName="username" label="Username" type="text" autocomplete="Username" placeholder="Username">
+        <div class="ui pointing red basic label" *ngIf="checkRequiredUsername()">value is required</div>
+        <div class="ui pointing red basic label" *ngIf="checkMinLength()">characters must be at least
+            {{authForm.controls['username'].errors!['minlength'].requiredLength}}
+            characters</div>
+        <div class="ui pointing red basic label" *ngIf="checkPattern()">This symbol is not allowed</div>
+        <div class="ui pointing red basic label" *ngIf="this.authForm.errors! 
+        ? this.authForm.errors!['username'] 
+        : null">
+            {{'Username not found!'}}
+        </div>
+    </div>
+    <div class="field">
+        <input formControlName="password" label="Password" type="text" autocomplete="Password" placeholder="Password">
+        <div class="ui pointing red basic label" *ngIf="checkRequiredPassword()">password is required</div>
+        <div class="ui pointing red basic label" *ngIf="checkMinLengthPassword()">characters must be at least
+            {{authForm.controls['password'].errors!['minlength'].requiredLength}}
+            characters
+        </div>
+        <div class="ui pointing red basic label" *ngIf="checkMaxLengthPasswordConfirmation()">characters must be max
+            {{authForm.controls['password'].errors!['maxlength'].requiredLength}}
+            characters
+        </div>
+        <div class="ui pointing red basic label" *ngIf="this.authForm.errors ? ['password'] : null">
+            {{this.authForm.errors!['password']}}
+        </div>
+    </div>
+    <button class="ui inverted blue button">Submit</button>
+
+</div>
+</form>
