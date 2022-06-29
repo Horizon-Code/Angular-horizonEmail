@@ -14,7 +14,6 @@ export class EmailIndexComponent implements OnInit {
   constructor(private emailService:EmailService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.route)
     this.emailService.getEmails().subscribe((response) => {
       this.emails = response;
       console.log(this.emails);

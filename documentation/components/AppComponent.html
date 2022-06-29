@@ -256,8 +256,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/app.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/app.component.ts:26</a></div>
                 </td>
             </tr>
 
@@ -293,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/app.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/app.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -330,8 +330,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/app.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/app.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -367,8 +367,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/app.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/app.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -435,7 +435,10 @@ import { AuthService } from &#x27;./auth/auth.service&#x27;;
 export class AppComponent {
   signedin$!: BehaviorSubject&lt;boolean&gt;;
 
-  constructor(private authService: AuthService,private router: Router){
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    ){
     this.signedin$ &#x3D; this.authService.signedin$;
   }
   ngOnInit() {
@@ -456,7 +459,7 @@ export class AppComponent {
       this.signedin$.next(true);
       if (inbox !&#x3D;&#x3D; &#x27;inbox&#x27;) {
         console.log(&#x27;Sending user to inbox from userSessionController&#x27;);
-        this.router.navigate([&#x27;/inbox&#x27;]);
+        this.router.navigate([&#x27;/inbox&#x27;]); 
       }
       const userKey:string|null &#x3D; localStorage.key(0) || &#x27;No user in localStorage&#x27;;
       return console.log(localStorage);

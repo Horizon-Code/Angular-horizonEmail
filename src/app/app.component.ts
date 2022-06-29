@@ -11,7 +11,10 @@ import { AuthService } from './auth/auth.service';
 export class AppComponent {
   signedin$!: BehaviorSubject<boolean>;
 
-  constructor(private authService: AuthService,private router: Router){
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    ){
     this.signedin$ = this.authService.signedin$;
   }
   ngOnInit() {
@@ -32,7 +35,7 @@ export class AppComponent {
       this.signedin$.next(true);
       if (inbox !== 'inbox') {
         console.log('Sending user to inbox from userSessionController');
-        this.router.navigate(['/inbox']);
+        this.router.navigate(['/inbox']); 
       }
       const userKey:string|null = localStorage.key(0) || 'No user in localStorage';
       return console.log(localStorage);

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, ValidationErrors, Validators } from '@angular/forms';
 import { MatchPassword} from '../validators/match-password';
 import { UniqueUsername } from '../validators/unique-username';
 import { AuthService } from '../auth.service';
@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
       Validators.minLength(4),
       Validators.maxLength(20),
     ])
-  },{ validators: [this.matchPassword.validate,] }
+  },{ validators: [this.matchPassword.validate] }
   );
 
   constructor(
@@ -41,7 +41,13 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
   onSubmit() {
-    if(this.authForm.invalid){return}
+    if(this.authForm.invalid){
+      if(this.authForm.errors!['passwordDontMatch']){
+        throw new Error('Passwords do not match!');
+      }else{
+        throw new Error(String(this.authForm.errors) || '{}');
+      }
+    }
     else{
      this.authService.signup(this.authForm.value)
      .subscribe({

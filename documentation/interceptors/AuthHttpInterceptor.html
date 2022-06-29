@@ -212,22 +212,25 @@ import { filter, Observable, tap } from &#x27;rxjs&#x27;
 export class AuthHttpInterceptor implements HttpInterceptor {
     constructor() { };
     intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;any&gt;&gt; {
+        console.log(req)
         const modifyReq &#x3D; req.clone({
             withCredentials: true,
         });
+        console.log(modifyReq)
         return next.handle(modifyReq)
-            // .pipe(
-            //     filter(v&#x3D;&gt;v.type&#x3D;&#x3D;&#x3D;HttpEventType.Sent),
-            //     tap(v &#x3D;&gt; {
-            //         console.log(&#x27;Request was sent it&#x27;);
-            //         // if (v.type &#x3D;&#x3D;&#x3D; HttpEventType.Sent) {
-            //         //     console.log(&#x27;Request was sent it&#x27;);
-            //         // }
-            //         // if (v.type &#x3D;&#x3D;&#x3D; HttpEventType.Response) {
-            //         //     console.log(&#x27;Response received it&#x27;);
-            //         // }
-            //     }),
-            // )
+            .pipe(
+                tap(v&#x3D;&gt;console.log(HttpEventType))
+                // filter(v&#x3D;&gt;v.type&#x3D;&#x3D;&#x3D;HttpEventType.Sent),
+                // tap(v &#x3D;&gt; {
+                //     console.log(&#x27;Request was sent it&#x27;);
+                //     if (v.type &#x3D;&#x3D;&#x3D; HttpEventType.Sent) {
+                //         console.log(&#x27;Request was sent it&#x27;);
+                //     }
+                //     if (v.type &#x3D;&#x3D;&#x3D; HttpEventType.Response) {
+                //         console.log(&#x27;Response received it&#x27;);
+                //     }
+                // }),
+            )
     }
 }
 </code></pre>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
-import { Observable, skipWhile, take, tap } from 'rxjs';
+import { Observable, skipWhile, subscribeOn, take, tap } from 'rxjs';
 import { AuthService } from './auth.service'
 
 @Injectable({

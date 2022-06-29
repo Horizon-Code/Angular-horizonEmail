@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AbstractControl, AsyncValidator, AsyncValidatorFn, FormControl, ValidationErrors } from '@angular/forms';
+import { AbstractControl, AsyncValidator, ValidationErrors } from '@angular/forms';
 import { catchError, map, Observable, of } from 'rxjs';
 import { AuthService } from '../auth.service'
 
@@ -15,6 +14,7 @@ export class UniqueUsername implements AsyncValidator {
             .pipe(
                 map(v => {
                     if (v.available) {
+                        console.log(v)
                         return null
                     } else {
                         return value

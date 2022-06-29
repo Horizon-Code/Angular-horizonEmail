@@ -10,17 +10,17 @@ export class AuthHttpInterceptor implements HttpInterceptor {
             withCredentials: true,
         });
         return next.handle(modifyReq)
-            // .pipe(
-            //     filter(v=>v.type===HttpEventType.Sent),
-            //     tap(v => {
-            //         console.log('Request was sent it');
-            //         // if (v.type === HttpEventType.Sent) {
-            //         //     console.log('Request was sent it');
-            //         // }
-            //         // if (v.type === HttpEventType.Response) {
-            //         //     console.log('Response received it');
-            //         // }
-            //     }),
-            // )
-    }
+    //         .pipe(
+    //             filter(v=>v.type===HttpEventType.Sent),
+    //             tap(v => {
+    //                 console.log('Request was sent it');
+    //                 if (v.type === HttpEventType.Sent) {
+    //                     console.log('Request was sent it');
+    //                 }
+    //                 if (v.type === HttpEventType.Response) {
+    //                     console.log('Response received it');
+    //                 }
+    //             }),
+    //         )
+     }
 }

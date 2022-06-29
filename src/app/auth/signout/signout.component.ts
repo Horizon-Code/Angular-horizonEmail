@@ -12,7 +12,9 @@ export class SignoutComponent implements OnInit {
   constructor(private authService: AuthService,private router:Router) { }
 
   ngOnInit(): void {
-    this.authService.signout().subscribe(()=>{
+    localStorage.clear();
+    this.authService.signout().subscribe((v)=>{
+      console.log(v)
       //take the user back to signin page
       this.router.navigateByUrl('/')
     })

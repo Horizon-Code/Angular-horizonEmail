@@ -304,8 +304,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:70</a></div>
                 </td>
             </tr>
 
@@ -341,8 +341,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="164"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:164</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:170</a></div>
                 </td>
             </tr>
 
@@ -378,8 +378,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:78</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:84</a></div>
                 </td>
             </tr>
 
@@ -415,8 +415,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="127"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:127</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:133</a></div>
                 </td>
             </tr>
 
@@ -452,8 +452,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="152"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:152</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:158</a></div>
                 </td>
             </tr>
 
@@ -489,8 +489,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="176"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:176</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:182</a></div>
                 </td>
             </tr>
 
@@ -526,8 +526,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="88"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:88</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:94</a></div>
                 </td>
             </tr>
 
@@ -563,8 +563,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="115"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:115</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:121</a></div>
                 </td>
             </tr>
 
@@ -600,8 +600,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="141"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:141</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="147"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:147</a></div>
                 </td>
             </tr>
 
@@ -637,8 +637,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:74</a></div>
                 </td>
             </tr>
 
@@ -674,8 +674,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/app/auth/signup/signup.component.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/auth/signup/signup.component.ts:106</a></div>
                 </td>
             </tr>
 
@@ -801,7 +801,7 @@
       Validators.minLength(4),
       Validators.maxLength(20),
     ])
-  },{ validators: [this.matchPassword.validate,] }
+  },{ validators: [this.matchPassword.validate] }
   )</code>
                     </td>
                 </tr>
@@ -852,7 +852,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, OnInit } from &#x27;@angular/core&#x27;;
-import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from &#x27;@angular/forms&#x27;;
+import { FormControl, FormGroup, FormGroupDirective, NgForm, ValidationErrors, Validators } from &#x27;@angular/forms&#x27;;
 import { MatchPassword} from &#x27;../validators/match-password&#x27;;
 import { UniqueUsername } from &#x27;../validators/unique-username&#x27;;
 import { AuthService } from &#x27;../auth.service&#x27;;
@@ -883,7 +883,7 @@ export class SignupComponent implements OnInit {
       Validators.minLength(4),
       Validators.maxLength(20),
     ])
-  },{ validators: [this.matchPassword.validate,] }
+  },{ validators: [this.matchPassword.validate] }
   );
 
   constructor(
@@ -894,7 +894,13 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
   onSubmit() {
-    if(this.authForm.invalid){return}
+    if(this.authForm.invalid){
+      if(this.authForm.errors![&#x27;passwordDontMatch&#x27;]){
+        throw new Error(&#x27;Passwords do not match!&#x27;);
+      }else{
+        throw new Error(String(this.authForm.errors) || &#x27;{}&#x27;);
+      }
+    }
     else{
      this.authService.signup(this.authForm.value)
      .subscribe({
